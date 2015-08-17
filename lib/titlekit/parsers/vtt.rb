@@ -118,14 +118,14 @@ module Titlekit
       result << "WEBVTT\n\n"
 
       subtitles.each_with_index do |subtitle, index|
-        result << (index + 1).to_s
-        result << "\n"
+        # result << (index + 1).to_s
+        # result << "\n"
         result << VTT.build_timecode(subtitle[:start])
         result << ' --> '
         result << VTT.build_timecode(subtitle[:end])
         result << "\n"
         result << subtitle[:lines]
-        result << "\n\n"
+        result << "\n"
       end
 
       result
