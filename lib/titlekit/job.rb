@@ -215,6 +215,8 @@ module Titlekit
             SSA.import(data)
           when '.srt'
             SRT.import(data)
+          when '.vtt'
+            VTT.import(data)
           when '.yt'
             YT.import(data)
           else
@@ -354,6 +356,9 @@ module Titlekit
           when '.srt'
             SRT.master(want.subtitles)
             SRT.export(want.subtitles)
+          when '.vtt'
+            VTT.master(want.subtitles)
+            VTT.export(want.subtitles)
           when '.yt'
             YT.master(want.subtitles)
             YT.export(want.subtitles)

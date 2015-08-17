@@ -1,10 +1,10 @@
-grammar SRT
+grammar VTT
   rule subtitles
-    subtitle* <Titlekit::SRT::Subtitles>
+    subtitle* <Titlekit::VTT::Subtitles>
   end
 
   rule subtitle
-    id eol from ' --> ' to coordinates? eol lines eos <Titlekit::SRT::Subtitle>
+    id eol from ' --> ' to coordinates? eol lines eos <Titlekit::VTT::Subtitle>
   end
 
   rule id
@@ -20,7 +20,7 @@ grammar SRT
   end
 
   rule timecode
-    hours ':' minutes ':' seconds (',' / '.') fractions <Titlekit::SRT::Timecode>
+    hours ':' minutes ':' seconds (',' / '.') fractions <Titlekit::VTT::Timecode>
   end
 
   rule hours
